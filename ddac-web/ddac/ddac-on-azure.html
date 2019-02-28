@@ -1,0 +1,136 @@
+<html>
+<head>
+<style>
+body {font-family: Arial;}
+</style>
+</head>
+<center><h2>DDAC on the Azure Marketplace</h2></center>
+<ul>
+  <li>DDAC is deployed in the Azure marketplace using ARM Templates </li>
+  <li>Azure Resource Manager (ARM) Templates are a way of deploying infrastructure-as-code to Azure,</li>
+  <li>These templates are automated, gold-standard deployments for the Azure Cloud.</li>
+  <li>The DDAC marketplace offering is based on Azure best practices for security and high availability.</li>
+  <li>The DDAC marketplace offering provides a development environment ready for you to build data models, load data and visualize metrics</li>
+</ul>
+<center><h2 id="Azure_Installation_of_DDAC">Azure Installation of DDAC</h2></center>
+<center><h2 id="Deployment_2.1">Deployment Notes</h2></center>
+<p>
+  <ul>
+    <li>Installation of DataStax Distribution of Apache Cassandra on Azure uses the binary tarball 5.1.12</li>
+    <li>The DDAC Azure Marketplace deployment creates between 3 and 20 nodes</li>
+    <li>DDAC Azure Marketplace deployment are single region multiple fault domains for high availability</li>
+    <li>Each DDAC node runs as a process on the Ubuntu 16.04 image</li>
+    <li>The DDAC Azure Marketplace deployment allows for the following instances types</li>
+    <ul>
+      <li>D8S_V3 (4 cores/32GB)</li>
+      <li>D16S_V3(8 cores/64GB)</li>
+      <li>D32S_V3(16 cores/128GB)</li>
+      <li>D64S_V3(32 cores/256GB)</li>
+    </ul>
+    <li>Each instance will include a 1024 GIB Premium SSD external drive along with the 30 GIB OS drive</li>
+    <li>The 1024 IB Premium SSD external drive will be mounted on /data/cassandra</li>
+    <li>Each instance will include openjdk version 1.8.0_191</li>
+    <li>ssh access is provider to each instance using username and password provided in deployment configuration</li>
+  </ul>
+
+  <center><h2 id="File_Locations_2.2">File Locations</h2></center>
+  <br>
+  <ul>
+    <li>Extracted file are located under the installation directory <strong>/usr/share/dse</strong></li>
+    <li>Default directory locations are:</li>
+    <ul>
+      <li>/data/cassandra/data</li>
+      <li>/data/cassandra/saved_caches</li>
+      <li>/data/cassandra/log</li>
+      <li>/data/cassandra/commitlog</li>
+      <li>/data/cassandra/dse-data</li>
+      <li>/data/cassandra/hints</li>
+      <li>/data/cassandra/cdc_raw</li>
+      <li>/var/lib/cassandra</li>
+      <li>/usr/share/dse/log</li>
+    </ul>
+    <li>Note that log files are under <strong>/usr/share/dse/logs</strong> which is on the 30 GIB OS drive</li>
+  </ul>
+  <ul>
+    <li>Default directories for cassanda.yaml, configuration files, and other database files</li>
+    <li><strong>/usr/share/dse</strong>/conf  Property files and cqlshrc samples including:</li>
+    <ul>
+      <li>cassandra.yaml</li>
+      <li>cassandra-env.sh</li>
+      <li>cassandra-rackdc.properties</li>
+      <li>cassandra-topology.properties</li>
+      <li>cassandra-topology.yaml</li>
+      <li>commitlog_archiving.properties</li>
+      <li>cqlshrc.sample</li>
+      <li>logback-tools.xml</li>
+      <li>logback.xml</li>
+      <li>hotspot_compiler</li>
+      <li>jvm.options</li>
+      <li>metrics-reporter-config</li>
+      <li>sample.yaml</li>
+      <li>/triggers</li>
+    </ul>
+  </ul>
+  <ul>
+    <li><strong>/usr/share/dse</strong>/logs  Log files</li>
+    <ul>
+      <li>debug.log</li>
+      <li>system.log</li>
+    </ul>
+
+  </ul>
+
+  <center><h2 id="Start_Stop_2.3">Start/Stop Cassandra</h2></center>
+  <p>
+    <strong>Start DDAC:</strong>
+    <br>
+    $ sudo -s
+    <br>
+    $ su cassandra -c "/usr/share/dse/bin/cassandra"
+  </p>
+  <p>
+    <strong>Stop DDAC:</strong>
+    <br>
+    $ sudo -s
+    <br>
+    $ ps auwx | grep CassandraDaemon
+    <br>
+    $ kill pid
+  </p>
+</ul>
+<center><h2 id="Patching_5">Patching</h2></center>
+<p>
+<strong>Patching</strong>
+<br>
+Cassandra patching documentation can be found <a href="https://docs.datastax.com/en/upgrade/doc/upgrade/datastax_enterprise/upgdDseMinor51x.html" target="_blank">here</a>
+<br>
+
+<center><h2 id="Migration_6">Migration</h2></center>
+<p>
+General upgrading instructions can be found <a href="https://docs.datastax.com/en/upgrade/doc/upgrade/datastax_enterprise/upgdDSE51.html" target="_blank">here</a>
+</p>
+
+<strong>Preparing to upgrade</strong>
+<br>
+Follow these steps to prepare each node for upgrading from DDAC 5.1
+<ul>
+<li>Upgrade to the latest patch release on your current version.</li>
+<li>Before upgrading, be sure that each node has ample free disk space.</li>
+<li>The required space depends on the compaction strategy.</li>
+<li>Familiarize yourself with the changes and features in this release DDAC 5.x release notes.</li>
+<li>General upgrading advice for any version. Be sure to read NEWS.txt all the way back to your current version.</li>
+<li>Be sure to read DDAC changes in CHANGES.txt.</li>
+<li>Be sure to read DDAC changes in CHANGES-DSE.txt.</li>
+
+<li>Upgrade the SSTables on each node to ensure that all SSTables are on the current version. (only if this a major release)
+nodetool upgradesstables</li>
+<li>This is required for DDAC upgrades that include major Cassandra version changes.</li>
+<li>Warning: Failure to upgrade SSTables when required results in a significant performance impact and increased disk usage.</li>
+<li>Verify the Java runtime version and upgrade to the recommended version.</li>
+<li>Run nodetool repair to ensure that data on each replica is consistent with data on other nodes.</li>
+<li>Before you upgrade, restart the node with this start-up parameter:</li>
+-Dcassandra.force_3_0_protocol_version=true</li>
+</ul>
+
+
+</html>
