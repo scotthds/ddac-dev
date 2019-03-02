@@ -94,7 +94,7 @@
 
                 %>
 
-                <h4> Azure Specific Information is <a href="<%= ddacdocurl %>">here</a></h4>
+                <h4> Azure Specific Information is <a href="<%= ddacdocurl %>" target=”_blank”>here</a></h4>
 
 
                 <h4>Retrieve cluster name, hosts and keyspaces</h4>
