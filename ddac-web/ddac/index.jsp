@@ -77,6 +77,7 @@
                 <%
 
                 String srvurl=null;
+                String ddacdocurl=null;
                 Process p =
                 Runtime.getRuntime().exec("/opt/dev/findPIP.sh");
                 OutputStream os = p.getOutputStream();
@@ -86,14 +87,18 @@
                 while ( disr != null ) {
                   out.println(disr);
                   srvurl = "http://"+ disr +":8080/ddac-servlet-0.0.1-SNAPSHOT/getstarted";
+                  ddacdocurl = "http://"+ disr +":8080/ddac/ddac-on-azure.html";
                   disr = dis.readLine();
                 }
 
 
                 %>
 
+                <h4> Azure Specific Information is <a href="<%= ddacdocurl %>">here</a></h4>
+
+
                 <h4>Retrieve cluster name, hosts and keyspaces</h4>
-                <form name="loginForm" method="post" action="http://localhost:8080/ddac-servlet-0.0.1-SNAPSHOT/getstarted" target=”_blank”>
+                <form name="loginForm" method="post" action="<%= srvurl %>" target=”_blank”>
                   <input type="submit" value="Get Info" />
                 </form>
 
