@@ -97,47 +97,70 @@ body {font-family: Arial;}
     <br>
     $ kill pid
   </p>
-</ul>
-<center><h2 id="Peering">VNET Peering</h2></center>
-<p>
-<strong>Peering</strong>
-<br>
-Azure peering documentation can be found <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps" target="_blank">here</a>
-<br>
 
-<center><h2 id="Patching_5">Patching</h2></center>
-<p>
-<strong>Patching</strong>
-<br>
-Cassandra patching documentation can be found <a href="https://docs.datastax.com/en/upgrade/doc/upgrade/datastax_enterprise/upgdDseMinor51x.html" target="_blank">here</a>
-<br>
+  <center><h2 id="CQL">start cqlsh</h2></center>
+  <p>
+    <strong>start cqlsh:</strong>
+    <br>
+    $ hostname
+    <br>
+    dc0vm0
+    <br>
+    $ cqlsh dc0vm0
+  </p>
 
-<center><h2 id="Migration_6">Migration</h2></center>
-<p>
-General upgrading instructions can be found <a href="https://docs.datastax.com/en/upgrade/doc/upgrade/datastax_enterprise/upgdDSE51.html" target="_blank">here</a>
-</p>
-
-<strong>Preparing to upgrade</strong>
-<br>
-Follow these steps to prepare each node for upgrading from DDAC 5.1
-<ul>
-<li>Upgrade to the latest patch release on your current version.</li>
-<li>Before upgrading, be sure that each node has ample free disk space.</li>
-<li>The required space depends on the compaction strategy.</li>
-<li>Familiarize yourself with the changes and features in this release DDAC 5.x release notes.</li>
-<li>General upgrading advice for any version. Be sure to read NEWS.txt all the way back to your current version.</li>
-<li>Be sure to read DDAC changes in CHANGES.txt.</li>
-<li>Be sure to read DDAC changes in CHANGES-DSE.txt.</li>
-
-<li>Upgrade the SSTables on each node to ensure that all SSTables are on the current version. (only if this a major release)
-nodetool upgradesstables</li>
-<li>This is required for DDAC upgrades that include major Cassandra version changes.</li>
-<li>Warning: Failure to upgrade SSTables when required results in a significant performance impact and increased disk usage.</li>
-<li>Verify the Java runtime version and upgrade to the recommended version.</li>
-<li>Run nodetool repair to ensure that data on each replica is consistent with data on other nodes.</li>
-<li>Before you upgrade, restart the node with this start-up parameter:</li>
--Dcassandra.force_3_0_protocol_version=true</li>
-</ul>
+  <center><h2 id="Authentication">start cqlsh</h2></center>
+  <p>
+    <strong>Configuring authentication</strong>
+    <br>
+    This DDAC deployment has the authenticator option to AllowAllAuthenticator. To change this follow the documentation below.
+    <br>
+    <br>
+    Cassandra authetication documentation can be found <a href="https://docs.datastax.com/en/cassandra/3.0/cassandra/configuration/secureConfigNativeAuth.html" target="_blank">here</a>
+    <br>
+  </p>
 
 
-</html>
+  <center><h2 id="Peering">VNET Peering</h2></center>
+  <p>
+    <strong>Peering</strong>
+    <br>
+    Azure peering documentation can be found <a href="https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps" target="_blank">here</a>
+    <br>
+
+    <center><h2 id="Patching_5">Patching</h2></center>
+    <p>
+      <strong>Patching</strong>
+      <br>
+      Cassandra patching documentation can be found <a href="https://docs.datastax.com/en/upgrade/doc/upgrade/datastax_enterprise/upgdDseMinor51x.html" target="_blank">here</a>
+      <br>
+
+      <center><h2 id="Migration_6">Migration</h2></center>
+      <p>
+        General upgrading instructions can be found <a href="https://docs.datastax.com/en/upgrade/doc/upgrade/datastax_enterprise/upgdDSE51.html" target="_blank">here</a>
+      </p>
+
+      <strong>Preparing to upgrade</strong>
+      <br>
+      Follow these steps to prepare each node for upgrading from DDAC 5.1
+      <ul>
+        <li>Upgrade to the latest patch release on your current version.</li>
+        <li>Before upgrading, be sure that each node has ample free disk space.</li>
+        <li>The required space depends on the compaction strategy.</li>
+        <li>Familiarize yourself with the changes and features in this release DDAC 5.x release notes.</li>
+        <li>General upgrading advice for any version. Be sure to read NEWS.txt all the way back to your current version.</li>
+        <li>Be sure to read DDAC changes in CHANGES.txt.</li>
+        <li>Be sure to read DDAC changes in CHANGES-DSE.txt.</li>
+
+        <li>Upgrade the SSTables on each node to ensure that all SSTables are on the current version. (only if this a major release)
+          nodetool upgradesstables</li>
+          <li>This is required for DDAC upgrades that include major Cassandra version changes.</li>
+          <li>Warning: Failure to upgrade SSTables when required results in a significant performance impact and increased disk usage.</li>
+          <li>Verify the Java runtime version and upgrade to the recommended version.</li>
+          <li>Run nodetool repair to ensure that data on each replica is consistent with data on other nodes.</li>
+          <li>Before you upgrade, restart the node with this start-up parameter:</li>
+          -Dcassandra.force_3_0_protocol_version=true</li>
+        </ul>
+
+
+        </html>
