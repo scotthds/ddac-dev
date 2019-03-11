@@ -57,6 +57,7 @@
         <button class="tablinks" onclick="openDDACTab(event, 'bulkloader')">Bulk Loader</button>
         <button class="tablinks" onclick="openDDACTab(event, 'kafka')">Kafka</button>
         <button class="tablinks" onclick="openDDACTab(event, 'exampleclients')">Example Clients</button>
+        <button class="tablinks" onclick="openDDACTab(event, 'support')">Support</button>
       </div>
 
 
@@ -99,67 +100,98 @@
 
                 <h4>Retrieve cluster name, hosts and keyspaces</h4>
                 <form name="loginForm" method="post" action="<%= srvurl %>" target=”_blank”>
-                  <input type="submit" value="Get Info" />
-                </form>
+                <input type="submit" value="Get Info" />
+              </form>
 
-              </div>
-              <div id="bulkloader" class="tabcontent">
-                <h3>Bulk Loader</h3>
-                <p>
-                  The Datastax Bulk Loader is located under /opt/dev/dsbulk
-                </p>
-                <p>
-                  See the links below for more information about getting started.
-                </p>
+            </div>
+            <div id="bulkloader" class="tabcontent">
+              <h3>Bulk Loader</h3>
+              <p>
+                The Datastax Bulk Loader is located under /opt/dev/dsbulk
+              </p>
+              <p>
+                See the links below for more information about getting started.
+              </p>
+              <br>
+                <a href="https://www.datastax.com/2018/05/introducing-datastax-bulk-loader" target="_blank">Bulk Loader Blog</a>
                 <br>
-                  <a href="https://www.datastax.com/2018/05/introducing-datastax-bulk-loader" target="_blank">Bulk Loader Blog</a>
                   <br>
+                    <a href="https://docs.datastax.com/en/dsbulk/doc/index.html" target="_blank">Bulk Loader Documentation</a>
                     <br>
-                      <a href="https://docs.datastax.com/en/dsbulk/doc/index.html" target="_blank">Bulk Loader Documentation</a>
+                    </div>
+                    <div id="kafka" class="tabcontent">
+                      <h3>Kafka</h3>
+                      <p>
+                        The Datastax Kafka connector islocated under /opt/dev/kafka
+                      </p>
+                      <p>
+                        See the links below for more information about getting started.
+                      </p>
                       <br>
-                      </div>
-                      <div id="kafka" class="tabcontent">
-                        <h3>Kafka</h3>
-                        <p>
-                          The Datastax Kafka connector islocated under /opt/dev/kafka
-                        </p>
-                        <p>
-                          See the links below for more information about getting started.
-                        </p>
+                        <a href="https://www.datastax.com/2018/12/introducing-the-datastax-apache-kafka-connector" target="_blank">Kafka Blog</a>
                         <br>
-                          <a href="https://www.datastax.com/2018/12/introducing-the-datastax-apache-kafka-connector" target="_blank">Kafka Blog</a>
                           <br>
+                            <a href="https://docs.datastax.com/en/kafka/doc/index.html" target="_blank">Kafka Documentation</a>
                             <br>
-                              <a href="https://docs.datastax.com/en/kafka/doc/index.html" target="_blank">Kafka Documentation</a>
-                              <br>
-                              </div>
-                              <div id="exampleclients" class="tabcontent">
-                                <h3>Example Clients</h3>
+                            </div>
+                            <div id="exampleclients" class="tabcontent">
+                              <h3>Example Clients</h3>
+                              <p>
+                                A simple java connection test client that uses the datstax driver is located under /opt/dev/ConnectionTest
+                              </p>
+                              <p>
+                                See the README.md for more information on building and running.
+                              </p>
+                            </div>
+                            <div id="support" class="tabcontent">
+                              <center>
+                              <h3>Before You Call Support</h3>
+                              <img src="./supportwrench.gif" alt="theeye" height="150" width="127">
+                              </center>
+                              <p>
                                 <p>
-                                  A simple java connection test client that uses the datstax driver is located under /opt/dev/ConnectionTest
+                                  <h4>Authentication</h4>
+                                  For simplicity, DDAC deploys with the default authenticator set to AllowAllAuthenticator. You can easily change this configuration yourself by following the instructions <a href="https://docs.datastax.com/en/ddac/doc/ddac/security/secureConfigNativeAuth.html" target="_blank">here</a>
                                 </p>
                                 <p>
-                                  See the README.md for more information on building and running.
+                                  <h4>More Advanced Security</h4>
+                                  For more information on how you can further secure DDAC, follow the steps <a href="https://docs.datastax.com/en/ddac/doc/ddac/security/secureDDACToc.html" target="_blank">here</a>
                                 </p>
-                              </div>
+
+                                <p>
+                                 <h4>Logging changes</h4>
+                                 As you cluster grows, you will want to modify your logging configuration and file locations. You can easily do this yourself by following the instructions <a href="https://docs.datastax.com/en/dse/5.1/dse-admin/datastax_enterprise/config/chgLogLocations.html" target="_blank">here</a>
+                                </p>
+
+                                <h4>Azure Deployment Failure</h4>
+                                <p>
+                                On rare occassions, there can be Azure platform failures that prevent Datastax Apache Cassandra from deployment. The VMs may be deployed but cassandra is not running on the nodes. Deleting the Azure Resource Group and attempting the deployment again from the Azure Marketplace can solve this situation.
+                                </p>
+                                <p>
+                                 <h4>If it is not seen here . . .</h4>
+                                 Then use your support login and go to <a href="https://support.datastax.com/hc/en-us" target="_blank">here</a>
+                                </p>
+                              </p>
+
+                            </div>
 
 
 
-                              <script>
-                              function openDDACTab(evt, tabName) {
-                                var i, tabcontent, tablinks;
-                                tabcontent = document.getElementsByClassName("tabcontent");
-                                for (i = 0; i < tabcontent.length; i++) {
-                                  tabcontent[i].style.display = "none";
-                                }
-                                tablinks = document.getElementsByClassName("tablinks");
-                                for (i = 0; i < tablinks.length; i++) {
-                                  tablinks[i].className = tablinks[i].className.replace(" active", "");
-                                }
-                                document.getElementById(tabName).style.display = "block";
-                                evt.currentTarget.className += " active";
+                            <script>
+                            function openDDACTab(evt, tabName) {
+                              var i, tabcontent, tablinks;
+                              tabcontent = document.getElementsByClassName("tabcontent");
+                              for (i = 0; i < tabcontent.length; i++) {
+                                tabcontent[i].style.display = "none";
                               }
-                              </script>
+                              tablinks = document.getElementsByClassName("tablinks");
+                              for (i = 0; i < tablinks.length; i++) {
+                                tablinks[i].className = tablinks[i].className.replace(" active", "");
+                              }
+                              document.getElementById(tabName).style.display = "block";
+                              evt.currentTarget.className += " active";
+                            }
+                            </script>
 
-                            </body>
-                          </html>
+                          </body>
+                        </html>
