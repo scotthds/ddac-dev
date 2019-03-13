@@ -95,13 +95,16 @@
 
                 %>
 
+                <h4>TODO: The below will be in Paul's docs at delivery</h4>
                 <h4> Azure Specific Information is <a href="<%= ddacdocurl %>" target=”_blank”>here</a></h4>
 
+                <h4>Cluster Status</h4>
+                <p>ssh into this VM with the username and password provided at deployment</p>
+                <p>from this vm ssh into 10.0.0.5, which is a node in the cluster, using the same credentials</p>
+                <p>from the command line run nodetool status</p>
 
-                <h4>Retrieve cluster name, hosts and keyspaces</h4>
-                <form name="loginForm" method="post" action="<%= srvurl %>" target=”_blank”>
-                <input type="submit" value="Get Info" />
-              </form>
+
+
 
             </div>
             <div id="bulkloader" class="tabcontent">
