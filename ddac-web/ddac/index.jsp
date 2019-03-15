@@ -58,6 +58,7 @@
         <button class="tablinks" onclick="openDDACTab(event, 'kafka')">Kafka</button>
         <button class="tablinks" onclick="openDDACTab(event, 'exampleclients')">Example Clients</button>
         <button class="tablinks" onclick="openDDACTab(event, 'support')">Support</button>
+        <button class="tablinks" onclick="openDDACTab(event, 'training')">Training</button>
       </div>
 
 
@@ -89,6 +90,7 @@
                   out.println(disr);
                   srvurl = "http://"+ disr +":8080/ddac-servlet-0.0.1-SNAPSHOT/getstarted";
                   ddacdocurl = "http://"+ disr +":8080/ddac/ddac-on-azure.html";
+                  trainingurl = "http://"+ disr +":8080/ddac/class-list-march-july-2019.html";
                   disr = dis.readLine();
                 }
 
@@ -177,7 +179,13 @@
                               </p>
 
                             </div>
-
+                            <div id="training" class="tabcontent">
+                              <h3>Training</h3>
+                              <p>
+                               2019 Schedule can be found <a href="<%= trainingurl %>" target="_blank">here</a>
+                              </p>
+                              
+                            </div>
 
 
                             <script>
