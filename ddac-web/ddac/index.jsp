@@ -80,6 +80,7 @@
 
                 String srvurl=null;
                 String ddacdocurl=null;
+                String trainingurl=null;
                 Process p =
                 Runtime.getRuntime().exec("/opt/dev/findPIP.sh");
                 OutputStream os = p.getOutputStream();
@@ -184,7 +185,7 @@
                               <p>
                                2019 Schedule can be found <a href="<%= trainingurl %>" target="_blank">here</a>
                               </p>
-                              
+
                             </div>
 
 
