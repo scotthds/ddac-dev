@@ -88,6 +88,10 @@
                             <strong>nodetool status</strong>
                           </p>
 
+                          <h4>The DDAC deployment includes a development VM whose Public IP is
+
+                          </h4>
+
                           <%
 
                           String srvurl=null;
@@ -110,9 +114,7 @@
 
                           %>
 
-                            <h4>The DDAC deployment includes a development VM whose Public IP is
-                              <%= disr %>
-                            </h4>
+
 
                           </center>
                         </div>
