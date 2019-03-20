@@ -213,7 +213,7 @@
                                                                       <li>/var/lib/waagent/custom-script/download/0/stderr</li>
                                                                       <li>/var/lib/waagent/custom-script/download/0/stdout</li>
                                                                     </ul>
-                                                                    After sending us the logs, you can try deleting the Azure Resource Group associated with this failed deployment and deploying from the Marketplace again.
+                                                                    After sending us the logs, <strong> try deleting the Azure Resource Group associated with this failed deployment and deploying from the Marketplace again.</strong>
                                                                   </p>
                                                                 </p>
                                                                 <p>
@@ -227,8 +227,13 @@
                                                               <center>
                                                                 <h3>Training</h3>
                                                                 <p>
-                                                                  2019 Schedule can be found
-                                                                  <a href="<%= trainingurl %>" target="_blank">here</a>
+                                                                  DDAC Azure marketplace customers can use this  <strong>25% Discount Code: AZMKT0408</strong> <br>
+                                                                  The training schedule can be found
+                                                                  <a href="https://academy.datastax.com/public-training" target="_blank">here</a>
+                                                                </p>
+                                                                <p>
+                                                                If you want to collaborate on technical issues join our slack channel
+                                                                <a href="https://academy.datastax.com/slack" target="_blank">here</a>
                                                                 </p>
                                                               </center>
                                                             </div>
