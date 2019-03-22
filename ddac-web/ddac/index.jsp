@@ -83,14 +83,7 @@
                       <center>
                         <h3>Azure Architecture</h3>
                         <img src="./DDAC-Azure-Architecture.png" alt="thearch" height="400" width="740">
-                          <h4>Cluster Status</h4>
-                          <p>You can check the cluster status by logging into one of the nodes and running
-                            <strong>nodetool</strong>
-                          </p>
-                          <p>ssh username@10.0.0.5 using the same credentials you provided at deployment</p>
-                          <p>From the command line run
-                            <strong>nodetool status</strong>
-                          </p>
+
 
                           <h4>The DDAC deployment includes a development VM whose Public IP is
 
@@ -118,7 +111,16 @@
 
                           %>
 
-
+                          <h4>Cluster Status</h4>
+                          <p>First ssh into this development VM using the public IP above and credentials from the deployment
+                          </p>
+                          <p>You can then check the cluster status by logging into one of the nodes and running
+                            <strong>nodetool</strong>
+                          </p>
+                          <p>ssh username@10.0.0.5 using the same credentials you provided at deployment</p>
+                          <p>From the command line run
+                            <strong>nodetool status</strong>
+                          </p>
 
                           </center>
                         </div>
