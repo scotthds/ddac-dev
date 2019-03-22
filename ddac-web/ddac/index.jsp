@@ -68,11 +68,12 @@
               <center>
                 <h3>DDAC</h3>
                 <a href="https://www.datastax.com/products/datastax-distribution-of-apache-cassandra" target="_blank">Datastax and Apache Cassandra</a>
-                <br>
                   <br>
                     <a href="https://docs.datastax.com/en/ddac/doc/index.html" target="_blank">DDAC Operational Documentation</a>
                     <br>
-                      <br></center>
+                      <a href="https://docs.datastax.com/en/ddac/doc/datastax_enterprise/azure/ddacAzure.html" target="_blank">DDAC on Azure Documentation</a>
+                      <br>
+                      </center>
                     </div>
 
                     <div id="getstarted" class="tabcontent">
