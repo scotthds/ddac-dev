@@ -250,12 +250,15 @@
                                                                 <p>
 
                                                                   Developer videos can be found below
+                                                                  <br><br>
                                                                   <a href="https://player.vimeo.com/video/325967736" target="_blank">Getting Started - Creating Your Data Model </a>
+                                                                  <br><br>
                                                                   <a href="https://player.vimeo.com/video/325967707" target="_blank">Getting Started - Writing and Querying Data </a>
+                                                                  <br><br>
                                                                   <a href="https://player.vimeo.com/video/325967736" target="_blank">Getting Started - How To Build An Application </a>
 
                                                                 </p>
-                                                              
+
                                                               </center>
                                                             </div>
 
