@@ -62,6 +62,7 @@
               <button class="tablinks" onclick="openDDACTab(event, 'exampleclients')">Example Clients</button>
               <button class="tablinks" onclick="openDDACTab(event, 'support')">Support</button>
               <button class="tablinks" onclick="openDDACTab(event, 'training')">Training</button>
+              <button class="tablinks" onclick="openDDACTab(event, 'devrel')">DevRel</button>
             </div>
 
             <div id="ddaco" class="tabcontent">
@@ -241,6 +242,20 @@
                                                                 If you want to collaborate on technical issues join our slack channel
                                                                 <a href="https://academy.datastax.com/slack" target="_blank">here</a>
                                                                 </p>
+                                                              </center>
+                                                            </div>
+                                                            <div id="devrel" class="tabcontent">
+                                                              <center>
+                                                                <h3>Developer Relations</h3>
+                                                                <p>
+
+                                                                  Developer videos can be found below
+                                                                  <a href="https://player.vimeo.com/video/325967736" target="_blank">Getting Started - Creating Your Data Model </a>
+                                                                  <a href="https://player.vimeo.com/video/325967707" target="_blank">Getting Started - Writing and Querying Data </a>
+                                                                  <a href="https://player.vimeo.com/video/325967736" target="_blank">Getting Started - How To Build An Application </a>
+
+                                                                </p>
+                                                              
                                                               </center>
                                                             </div>
 
