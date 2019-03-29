@@ -50,7 +50,7 @@
         </head>
         <body>
           <center>
-            <h2>DDAC (DataStax Distribution of Apache Cassandra)
+            <h2>DDAC (DataStax Distribution of Apache Cassandra &trade;)
             </h2>
           </center>
           <br>
