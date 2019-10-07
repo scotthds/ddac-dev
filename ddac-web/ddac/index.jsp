@@ -50,6 +50,7 @@
         </head>
         <body>
           <center>
+            <img src="./datastax-logo.png" alt="datastax" height="41" width="200">
             <h2>DDAC (DataStax Distribution of Apache Cassandra &trade;)
             </h2>
           </center>
@@ -176,12 +177,12 @@
                                                 <p>
                                                   <h4>Authentication</h4>
                                                   For simplicity, DDAC deploys with the default authenticator set to AllowAllAuthenticator. You can easily change this configuration yourself by following the instructions
-                                                  <a href="https://docs.datastax.com/en/ddac/doc/ddac/security/secureConfigNativeAuth.html" target="_blank">here</a>
+                                                  <a href="https://docs.datastax.com/en/ddacsecurity/doc/ddacsecurity/secureConfigNativeAuth.html" target="_blank">here</a>
                                                 </p>
                                                 <p>
                                                   <h4>More Advanced Security</h4>
                                                   For more information on how you can further secure DDAC, follow the steps
-                                                  <a href="https://docs.datastax.com/en/ddac/doc/ddac/security/secureDDACToc.html" target="_blank">here</a>
+                                                  <a href="https://docs.datastax.com/en/ddacsecurity/doc/ddacsecurity/secureIntro.html" target="_blank">here</a>
                                                 </p>
 
                                                 <p>
